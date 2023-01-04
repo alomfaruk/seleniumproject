@@ -54,15 +54,15 @@ public class utilities {
 
   @AfterClass
   public void afterClass() throws IOException {
-	Screenshot();
+	//Screenshot();
 	 
   }
  
-  public  void Screenshot() throws IOException  {
+  public  void Screenshot(String foldername) throws IOException  {
 		 String ud=System.getProperty("user.dir");
 		 Date datein=new Date();
 		 datein.toString().replace(" ","_").replace(":","_");
 		File screen= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		org.openqa.selenium.io.FileHandler.copy(screen,new File(ud+"/screenshorts/amazon"+datein+"myss.jpg"));
+		org.openqa.selenium.io.FileHandler.copy(screen,new File(ud+"/Pictures/"+foldername+"/"+datein+"myss.jpg"));
 	}
 }

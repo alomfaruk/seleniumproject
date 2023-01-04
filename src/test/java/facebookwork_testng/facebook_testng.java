@@ -1,6 +1,9 @@
 package facebookwork_testng;
 
 import org.testng.annotations.Test;
+
+import com.shams.excel.reader.utilities.Xlsx_Reeader_EAL;
+
 import org.testng.annotations.Test;
 
 import facebook_pom.home_page;
@@ -24,10 +27,11 @@ public class facebook_testng extends utilities{
 
   @DataProvider
   public Object[][] facebookdata() {
-    return new Object[][] {
-      new Object[] { "abc1@gmail", "abc123" },
-      new Object[] { "abc2@gmail", "abc234" },
-      new Object[] { "abc3@gmail", "abc345" },
-    };
+	  String exelfilepath="/Users/anikhassan/eclipse-workspace/seleniumproject/Testdata/facebookdata.xlsx";
+	  Xlsx_Reeader_EAL reader=new Xlsx_Reeader_EAL(exelfilepath);
+	   Object[][] data=reader.getSheetData("fb");
+	   return data;
+	  
+    
   }
 }

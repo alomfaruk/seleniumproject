@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="url" value="https://www.facebook.com/"/>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="ebay(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.ebay.com/"/>
     <classes>
-      <class name="facebookwork_testng.facebook_testng">
+      <class name="ebay.ebaytest">
         <methods>
-          <include name="facebook" invocation-numbers="1 2"/>
+          <include name="test4" invocation-numbers="1 2 3"/>
           <include name="afterClass"/>
           <include name="Ibrowsers"/>
         </methods>
-      </class> <!-- facebookwork_testng.facebook_testng -->
+      </class> <!-- ebay.ebaytest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- ebay(failed) -->
+  <test thread-count="5" name="amazon(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://www.amazon/"/>
+    <classes>
+      <class name="amazon.Test_amazon">
+        <methods>
+          <include name="testamazon" invocation-numbers="0 1 2 3"/>
+          <include name="afterClass"/>
+          <include name="Ibrowsers"/>
+        </methods>
+      </class> <!-- amazon.Test_amazon -->
+    </classes>
+  </test> <!-- amazon(failed) -->
 </suite> <!-- Failed suite [Suite] -->
